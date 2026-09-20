@@ -6,18 +6,80 @@
 <title>Para o amor da minha vida ❤️</title>
 <style>
 * { box-sizing: border-box; }
-body { margin: 0; min-height: 100vh; font-family: Georgia, "Times New Roman", serif; color: white; background-image: linear-gradient(rgba(35, 0, 8, 0.38), rgba(35, 0, 8, 0.65)), url("paisagem.jpg"); background-size: cover; background-position: center; background-attachment: fixed; display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
+body { margin: 0; min-height: 100vh; font-family: Georgia, serif; color: white; background: #3a0a14; display: flex; justify-content: center; align-items: center; }
 .container { width: 100%; max-width: 430px; min-height: 100vh; padding: 25px; display: flex; justify-content: center; align-items: center; text-align: center; }
 .envelope { cursor: pointer; animation: flutuar 2.5s ease-in-out infinite; }
-.envelope-icon { width: 270px; height: 180px; background: rgba(255, 250, 250, 0.92); border-radius: 10px; position: relative; margin: auto; box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45); }
-.envelope-icon::before { content: ""; position: absolute; top: 0; left: 0; border-left: 135px solid transparent; border-right: 135px solid transparent; border-top: 100px solid rgba(125, 0, 25, 0.78); }
-.heart { position: absolute; z-index: 5; top: 62px; left: 50%; transform: translateX(-50%); font-size: 50px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25)); }
-.title { margin-top: 25px; font-size: 25px; font-weight: bold; text-shadow: 0 2px 8px rgba(0,0,0,0.65); }
-.click { margin-top: 12px; font-size: 16px; text-shadow: 0 2px 7px rgba(0,0,0,0.70); }
+.envelope-icon { width: 270px; height: 180px; background: #fffaf0; border-radius: 10px; position: relative; margin: auto; box-shadow: 0 15px 45px rgba(0,0,0,0.45); }
+.envelope-icon::before { content: ""; position: absolute; top: 0; left: 0; border-left: 135px solid transparent; border-right: 135px solid transparent; border-top: 100px solid #7d0019; }
+.heart { position: absolute; z-index: 5; top: 62px; left: 50%; transform: translateX(-50%); font-size: 50px; }
+.title { margin-top: 25px; font-size: 25px; font-weight: bold; }
+.click { margin-top: 12px; font-size: 16px; }
 .letter { display: none; width: 100%; animation: aparecer 1.2s ease; }
-.paper { background: rgba(55, 0, 10, 0.72); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); padding: 28px 22px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 20px 55px rgba(0,0,0,0.50); text-align: left; }
-.paper h1 { text-align: center; font-size: 29px; color: white; margin-top: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.40); }
+.paper { background: rgba(80,0,20,0.9); padding: 28px 22px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.25); text-align: left; }
+.paper h1 { text-align: center; font-size: 29px; margin-top: 0; }
 .subtitle { text-align: center; font-size: 18px; color: #ffdadd; margin-bottom: 15px; }
 .date { text-align: center; font-size: 13px; color: #ffc4cc; margin-bottom: 20px; }
-.foto-container { width: 100%; text-align: center; margin: 10px 0 25px; }
-.foto-container img { width: 100%; max-width: 330px; height: 250px; object-fit: cover; border-radius
+.foto-container { text-align: center; margin: 10px 0 25px; }
+.foto-container img { width: 100%; max-width: 330px; height: 250px; object-fit: cover; border-radius: 16px; border: 2px solid rgba(255,255,255,0.35); }
+.destaque { text-align: center; font-size: 21px; font-weight: bold; color: #ffbec6; margin: 23px 0; }
+.assinatura { text-align: center; margin-top: 28px; font-size: 19px; font-style: italic; }
+.music-box { margin-top: 28px; padding: 17px; background: rgba(100,0,20,0.6); border-radius: 15px; text-align: center; }
+.music-button { border: none; background: #96001e; color: white; padding: 12px 25px; border-radius: 30px; font-size: 15px; cursor: pointer; }
+.pergunta-box { margin-top: 30px; padding: 22px; background: rgba(255,255,255,0.15); border-radius: 18px; text-align: center; }
+.pergunta-texto { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
+.botoes-resposta { display: flex; gap: 15px; justify-content: center; }
+.btn-sim { border: none; background: #ff2e63; color: white; padding: 13px 30px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; }
+.btn-nao { border: 1px solid white; background: transparent; color: white; padding: 13px 30px; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; }
+@keyframes aparecer { from { opacity: 0; transform: translateY(35px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes flutuar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.coracao { position: fixed; top: -30px; font-size: 18px; animation: cair 5s linear forwards; }
+@keyframes cair { to { transform: translateY(110vh); opacity: 0; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="envelope" id="envelope" onclick="abrirCarta()">
+<div class="envelope-icon"><div class="heart">❤️</div></div>
+<div class="title">Para o amor da minha vida</div>
+<div class="click">💌 Toque na carta para abrir</div>
+</div>
+<div class="letter" id="letter">
+<div class="paper">
+<h1>Para ti, meu amor ❤️</h1>
+<div class="subtitle">9 meses de nós...</div>
+<div class="date">Desde 21 de dezembro de 2025</div>
+<div class="foto-container"><img src="IMG_8227.jpeg"></div>
+<p>Meu amor,</p>
+<p>Hoje completamos 9 meses e eu só quero lembrar-te de uma coisa:</p>
+<div class="destaque">Eu continuo te escolhendo. ❤️</div>
+<p>Desde o dia <strong>21 de dezembro de 2025</strong>, quando eu disse SIM, começamos a escrever a nossa história.</p>
+<p>Amar-te à distância nem sempre é fácil. Existem abraços que faltam, saudades que apertam e momentos em que tudo o que eu queria era estar ao teu lado.</p>
+<p>Mas mesmo longe, continuas perto do meu coração.</p>
+<div class="destaque">E se eu pudesse voltar àquele dia...<br><br>Eu diria SIM outra vez. ❤️</div>
+<p>Feliz 9 meses, meu amor.</p>
+<div class="assinatura">Com todo o meu amor,<br>Charmila ❤️</div>
+<div class="music-box">
+<div>🎵 Uma música para nós</div>
+<button class="music-button" id="musicButton" onclick="controlarMusica()">▶️ Tocar música</button>
+</div>
+<div class="pergunta-box">
+<div class="pergunta-texto">Aceitas continuar a viver a nossa história comigo? ❤️</div>
+<div class="botoes-resposta">
+<button class="btn-sim" onclick="responderSim()">SIM ❤️</button>
+<button class="btn-nao" onclick="responderNao()">NÃO</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
+<script>
+const musica=document.getElementById("musica");
+const botao=document.getElementById("musicButton");
+function abrirCarta(){document.getElementById("envelope").style.display="none";document.getElementById("letter").style.display="block";musica.play().then(()=>{botao.innerHTML="⏸️ Pausar";}).catch(()=>{});}
+function controlarMusica(){if(musica.paused){musica.play();botao.innerHTML="⏸️ Pausar";}else{musica.pause();botao.innerHTML="▶️ Tocar";}}
+function responderSim(){window.open("https://wa.me/258850730250?text="+encodeURIComponent("SIM! ❤️ Eu aceito continuar a viver a nossa história contigo! 🥰"),"_blank");}
+function responderNao(){window.open("https://wa.me/258850730250?text="+encodeURIComponent("Precisamos conversar... 😢"),"_blank");}
+</script>
+</body>
+</html>
